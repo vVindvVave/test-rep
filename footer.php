@@ -5,7 +5,7 @@ if ( current_user_can( 'manage_options' ) ) {
 	wp_footer();
 }
 ?>
-<!-- 123 -->
+<!-- 1234 -->
 <footer class="footer">
 	<div class="container">
 		<div class="footer__row">
