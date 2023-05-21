@@ -11,7 +11,7 @@
 </head>
 <body>
 
-<!-- 123456 -->
+<!-- 1234567 -->
 
 <div class="page <?= $GLOBALS['page'] ?? '_index' ?>">
 <?php
