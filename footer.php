@@ -6,6 +6,7 @@ if ( current_user_can( 'manage_options' ) ) {
 }
 ?>
 <!-- 12344 -->
+<!-- 1234 -->
 <footer class="footer">
 	<div class="container">
 		<div class="footer__row">
