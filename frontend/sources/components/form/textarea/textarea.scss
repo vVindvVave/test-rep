@@ -1,0 +1,24 @@
+.form-item{
+
+  textarea{
+    appearance: none;
+    outline: none;
+    resize: none;
+    overflow: hidden;
+    display: block;
+    width: 100%;
+    font-size: inherit;
+    font-family: inherit;
+    font-weight: inherit;
+    color: #333333;
+    border: none;
+    background-color: #f6f2ee;
+    padding: 20px 12px 10px;
+    transition: $transition;
+    @include min768{}
+  }
+
+  &._white textarea{
+    background-color: white;
+  }
+}

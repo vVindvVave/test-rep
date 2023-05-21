@@ -1,0 +1,51 @@
+.form-item{
+
+  select{
+    appearance: none;
+    outline: none;
+    font-family: inherit;
+    font-weight: inherit;
+    font-size: inherit;
+    display: block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    width: 100%;
+    color: #A29F9A;
+    border: none;
+    background-color: #f6f2ee;
+    height: 54px;
+    padding: 10px 36px 0 12px;
+    transition: $transition;
+    background-repeat: no-repeat;
+    background-size: 10px 7px;
+    background-position: calc(100% - 20px) 50%;
+    background-image: url("../img/svg/select.svg");
+    cursor: pointer;
+    @include min768{
+      height: 59px;
+    }
+
+    .form-item._white &{
+      background-color: white;
+    }
+
+    option{
+      color: #333333;
+      &:disabled {
+        display:none;
+      }
+    }
+  }
+  &._not-empty select{
+    color: #333333;
+  }
+  select + &__label{
+    opacity: 0;
+    visibility: hidden;
+  }
+  &._not-empty select + &__label{
+    opacity: 1;
+    visibility: visible;
+  }
+}

@@ -1,0 +1,84 @@
+@import "./form-item/form-item";
+@import "./input-text/input-text";
+@import "./select/select";
+@import "./checkbox/checkbox";
+@import "./input-phone/input-phone";
+@import "./textarea/textarea";
+@import "./datepicker/datepicker";
+@import "./file/file";
+@import "./zapros_doc/zapros_doc";
+
+.form{
+
+  &._feedback{
+    width: 830px;
+    max-width: 100%;
+    padding: 40px 20px;
+    @include min768{
+      padding: 40px 85px 50px 65px;
+    }
+  }
+
+  &__title{
+    font-family: 'Kudryashev Headline';
+    font-weight: 500;
+    color: $colorRed;
+    font-size: 26px;
+    line-height: 1.1;
+    margin-bottom: 30px;
+    @include min768{
+      font-size: 48px;
+      line-height: 1.2;
+    }
+  }
+
+  &__from-to-row{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    @include max768{}
+    @include min768{
+      gap: 20px;
+    }
+
+    &__item{
+      width: 235px;
+    }
+
+    &__defis{}
+  }
+
+  &__toggler{
+    color: #8D3332;
+    cursor: pointer;
+    margin-bottom: 25px;
+    display: flex;
+    width: fit-content;
+  }
+
+  &__success-submit-row{
+    display: flex;
+    gap: 20px;
+    margin-top: 20px;
+    @include max768{
+      flex-direction: column;
+    }
+    @include min768{
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 30px;
+      gap: 30px;
+    }
+
+    button[type=submit]{
+      @include max768{
+        width: 100%;
+      }
+    }
+  }
+
+}
+
+.is-hidden{
+  display: none;
+}

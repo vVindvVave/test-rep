@@ -1,0 +1,68 @@
+.form-item{
+
+  &__checkbox{
+    display: flex;
+    font-size: 14px;
+    line-height: 1.4;
+    color: #A29F9A;
+    @include min768{
+      font-size: 12px;
+      line-height: 16px;
+    }
+
+    &._policy{
+      max-width: 290px;
+    }
+
+    a{
+      color: $colorRed;
+    }
+
+    input[type=checkbox],
+    input[type=radio]{
+      position: absolute;
+      top: 0;
+      left: 0;
+      opacity: 0;
+      visibility: hidden;
+    }
+
+    input[type=checkbox] + i,
+    input[type=radio] + i{
+      width: 20px;
+      height: 20px;
+      background-color: #f6f2ee;
+      background-repeat: no-repeat;
+      background-position: center center;
+      background-size: 12px 9px;
+      flex-shrink: 0;
+      margin-right: 16px;
+      cursor: pointer;
+      align-self: flex-start;
+      transition: $transition;
+      @include min768{
+        width: 24px;
+        height: 24px;
+        background-size: 15px 10px;
+      }
+
+    }
+    &._white input[type=checkbox] + i,
+    &._white input[type=radio] + i{
+      background-color: white;
+    }
+    input[type=checkbox]:checked + i,
+    input[type=radio]:checked + i{
+      background-color: #BDA47F;
+      background-image: url("../img/svg/checkbox.svg");
+    }
+
+    &__text{
+      align-self: center;
+    }
+  }
+  &._error &__checkbox{
+
+    i{}
+  }
+}

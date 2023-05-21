@@ -1,0 +1,1 @@
+import svgSprite from '../components/svg-sprite/svg-sprite.js'; svgSprite();

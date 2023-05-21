@@ -1,0 +1,33 @@
+.cookie-popup{
+  display: none;
+  position: fixed;
+  z-index: 100;
+  background-color: $colorGold;
+  color: white;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 16px;
+  @include min768{
+    padding: 20px;
+  }
+  @include min1024{
+    padding: 24px;
+  }
+  &._active{
+    display: flex;
+  }
+
+  &__text{
+
+    a{
+      color: inherit;
+    }
+  }
+
+  &__btns{
+    padding-left: 20px;
+  }
+}

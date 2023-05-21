@@ -1,0 +1,109 @@
+.dropdown{
+  position: relative;
+
+  &__head{
+    position: relative;
+    display: flex;
+    align-items: center;
+    background-color: white;
+    height: 54px;
+    cursor: pointer;
+    @include min768{
+      height: 59px;
+    }
+
+    &:before{
+      content: '';
+      position: absolute;
+      width: 10px;
+      height: 7px;
+      background-image: url("./select.svg");
+      background-repeat: no-repeat;
+      background-size: 100% 100%;
+      top: 50%;
+      margin-top: -5px;
+      right: 20px;
+    }
+
+    &__text{
+      padding: 0 36px 0 24px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      @include min768{
+        padding-left: 12px;
+      }
+    }
+  }
+
+  &__body{
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    max-height: 430px;
+    background-color: white;
+    border: 1px solid #eae5e2;
+    display: flex;
+    flex-direction: column;
+    opacity: 0;
+    visibility: hidden;
+
+    &__scroll-wrap{
+      overflow-y: auto;
+      flex-grow: 1;
+    }
+
+    > .dropdown__body__item{
+      flex-shrink: 0;
+      border-bottom: 1px solid #eae5e2;
+    }
+
+    &__item{
+      padding: 18px 20px;
+      display: flex;
+      font-size: 14px;
+      line-height: 1.4;
+      cursor: pointer;
+      transition: $transition;
+      @include min768{
+        font-size: 16px;
+      }
+      @include hover{
+        background-color: #f6f2ee;
+      }
+
+      &__text{}
+
+      &__icon{
+        width: 20px;
+        height: 20px;
+        background-color: #f6f2ee;
+        border: 1px solid #f6f2ee;
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-size: 12px 9px;
+        flex-shrink: 0;
+        margin-right: 16px;
+        align-self: flex-start;
+        transition: $transition;
+        @include min768{
+          width: 24px;
+          height: 24px;
+          background-size: 15px 10px;
+        }
+      }
+      @include hover(' &__icon'){
+        border-color: #eae5e2;
+      }
+      &._active &__icon{
+        background-image: url("./checkbox.svg");
+        background-color: #bda47f;
+      }
+    }
+  }
+  &._open &__body{
+    opacity: 1;
+    visibility: visible;
+  }
+}

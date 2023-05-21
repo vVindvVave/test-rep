@@ -1,0 +1,158 @@
+@use 'sass:math';
+
+$transitionDuration: .4s;
+$transitionTimingFunction: cubic-bezier(0.25, 0.1, 0.25, 1);
+$transition: $transitionDuration $transitionTimingFunction;
+
+$colorBlack: #373737;
+$colorRed: #8D3332;
+$colorGold: #BDA47F;
+$mainBgColor: #f3f3f3;
+$mainTextColor: #373737;
+
+$min_w425: '(min-width: 425px)';
+$max_w425: '(max-width: 424px)';
+$min_w768: '(min-width: 768px)';
+$max_w768: '(max-width: 767px)';
+$min_w1024: '(min-width: 1025px)';
+$max_w1024: '(max-width: 1024px)';
+$min_w1280: '(min-width: 1280px)';
+$max_w1280: '(max-width: 1279px)';
+$min_w1366: '(min-width: 1366px)';
+$max_w1366: '(max-width: 1365px)';
+$min_w1440: '(min-width: 1440px)';
+$max_w1440: '(max-width: 1439px)';
+$min_w1600: '(min-width: 1600px)';
+$max_w1600: '(max-width: 1599px)';
+$min_w1920: '(min-width: 1920px)';
+$max_w1920: '(max-width: 1919px)';
+
+@mixin max425 {
+  @media #{$max_w425} {
+    @content;
+  }
+}
+@mixin min425 {
+  @media #{$min_w425} {
+    @content;
+  }
+}
+@mixin max768 {
+  @media #{$max_w768} {
+    @content;
+  }
+}
+@mixin min768 {
+  @media #{$min_w768} {
+    @content;
+  }
+}
+@mixin max1024 {
+  @media #{$max_w1024} {
+    @content;
+  }
+}
+@mixin min1024 {
+  @media #{$min_w1024} {
+    @content;
+  }
+}
+@mixin min1280 {
+  @media #{$min_w1280} {
+    @content;
+  }
+}
+@mixin min1440 {
+  @media #{$min_w1440} {
+    @content;
+  }
+}
+@mixin min1600 {
+  @media #{$min_w1600} {
+    @content;
+  }
+}
+
+$isHover: '(hover), (min-width:0\0), (min--moz-device-pixel-ratio:0), (-ms-high-contrast: none), (-ms-high-contrast: active)';
+
+@mixin hover($context:''){
+  &:hover#{$context}{
+    @media #{$isHover} {
+      @content;
+    }
+  }
+  &:active#{$context}{
+    @content;
+  }
+}
+
+@function PXtoREM($current) {
+  @return math.div($current, 16)+rem
+}
+@function PXtoVW($current, $device: false) {
+  $result: calc($current*(100/1920)) + vw;
+  @return $result;
+}
+@function PXtoVH($current) {
+  @return $current*0.1032 + vh
+}
+
+@mixin first-last-vertical{
+  &:first-child{
+    margin-top: 0;
+  }
+  &:last-child{
+    margin-bottom: 0;
+  }
+}
+@mixin first-last-vertical-padding{
+  &:first-child{
+    padding-top: 0;
+  }
+  &:last-child{
+    padding-bottom: 0;
+  }
+}
+@mixin first-last-horizontal{
+  &:first-child{
+    margin-left: 0;
+  }
+  &:last-child{
+    margin-right: 0;
+  }
+}
+@mixin first-last-horizontal-padding{
+  &:first-child{
+    padding-left: 0;
+  }
+  &:last-child{
+    padding-right: 0;
+  }
+}
+
+@mixin absolut-wrap{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+@mixin bg-img{
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+}
+
+@mixin img{
+  object-fit: cover;
+  object-position: center;
+}
+
+@mixin h{
+  h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6{
+    @content;
+  }
+}
+
+// PROGECTS

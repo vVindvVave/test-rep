@@ -1,0 +1,16 @@
+// Стили, загружаемые в приоритете. Лучше всего вставлять только те, что будут видны непосредственно во время загрузки страницы.
+
+@import "./modules/mixins";
+
+@import "./modules/reset";
+@import "./modules/conf";
+@import "./modules/fonts";
+@import "./modules/base-style";
+
+
+// @import "../components/*component-name*/*component-name*-base";
+@import "../components/header/header-base";
+@import "../components/footer/footer-base";
+@import "../components/nav/nav";
+
+// @import "../pages/*page-name*/*page-name*-base";

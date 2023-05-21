@@ -1,0 +1,13 @@
+// Стили, которые не требуются непосредственно во время загрузки страницы
+
+@import "./modules/mixins";
+
+@import "./modules/global-style";
+
+// @import "../components/*component-name*/*component-name*-global";
+
+@import "../components/form/form";
+@import "../components/popup/popup";
+
+
+// @import "../pages/*page-name*/*page-name*-global";

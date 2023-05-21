@@ -1,0 +1,102 @@
+.compensate-for-scrollbar,
+.compensate-for-scrollbar .header{
+  padding-right: 10px;
+}
+
+.fancybox__thumbs .carousel__slide .fancybox__thumb::after{
+  border: 2px solid $colorBlack;
+}
+
+@keyframes fancybox-show {
+  0% { transform: translateY(100vh) }
+  100% { transform: translateY(0) }
+}
+.showClass{
+  animation: fancybox-show $transitionDuration $transitionTimingFunction;
+}
+@keyframes fancybox-hide {
+  0% { transform: translateY(0) }
+  100% { transform: translateY(100vh) }
+}
+.hideClass{
+  animation: fancybox-hide $transitionDuration $transitionTimingFunction;
+}
+
+.popup{
+
+  &.fancybox__container{}
+
+  .fancybox__slide{
+    padding: 16px;
+  }
+
+  .fancybox__backdrop{
+    background: rgba(160, 156, 149, 0.6);
+    backdrop-filter: blur(5px);
+  }
+
+  .fancybox__content{
+    background-color: white;
+    padding: 0;
+    max-width: 100%;
+
+    :focus{
+      outline: none!important;
+    }
+
+    >.carousel__button.is-close{
+      top: 16px;
+      right: 16px;
+
+      svg{
+        all: unset;
+        display: block;
+        width: 32px;
+        height: 32px;
+      }
+    }
+
+    &:has(>iframe){
+      >.carousel__button.is-close{
+        top: -50px;
+      }
+    }
+  }
+}
+
+.popup-success{
+  padding: 40px 20px;
+  width: 620px;
+  max-width: 100%;
+  @include min768{
+    padding: 40px 65px;
+  }
+
+  .title{
+    font-family: 'Kudryashev Headline';
+    font-weight: 500;
+    color: $colorRed;
+    font-size: 26px;
+    line-height: 1.1;
+    @include min768{
+      font-size: 48px;
+      line-height: 1.2;
+    }
+  }
+
+  .text{
+    font-style: normal;
+    color: #333333;
+    font-size: 14px;
+    line-height: 1.5;
+    font-weight: 400;
+    margin-top: 23px;
+    @include min768{
+      font-family: 'Museo Sans Cyrl';
+      font-size: 28px;
+      line-height: 1.3;
+      font-weight: 300;
+      margin-top: 32px;
+    }
+  }
+}

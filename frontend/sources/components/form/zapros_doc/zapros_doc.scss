@@ -1,0 +1,81 @@
+.inputs-line{
+  @include max768{
+    margin: 30px 0;
+    display: block;
+  }
+  display: flex;
+  justify-content: space-between;
+  margin: 30px 0;
+}
+.inputs-line{
+  .form-item{
+    @include max768{
+      margin: 30px 0;
+      width: unset;
+    }
+    width: 315px;
+    margin: 0;
+  }
+}
+.form-item__label{
+  &._req{
+    @include max768{
+      max-width: 90%;
+    }
+  }
+}
+.file_form_item_line{
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  margin: 30px 0;
+  gap: 20px;
+  @include max768{
+    display: block;
+  }
+}
+.file_form_item_line{
+  .form-item {
+    margin: 0;
+    .form-item__file{
+      .js--input-file-text{
+        @include max768{
+          overflow: hidden;
+          width: 240px;
+        }
+      }
+      @include max768{
+        max-width: 100%;
+      }
+    }
+  }
+}
+.file_form_item_line{
+  .file_button_text{
+    color: #A29F9A;
+    @include max768{
+      margin-top: 20px;
+    }
+  }
+}
+.form_head_text{
+  font-family: "Museo Sans Cyrl";
+  margin-bottom: 30px;
+}
+.form_personType_title{
+  font-family: "Kudryashev Headline";
+  font-weight: 500;
+  color: #BDA47F;
+  font-size: 32px;
+}
+.form-item__checkbox{
+  &._one-person{
+    align-items: center;
+  }
+}
+.form-item_one-person_text{
+  font-size: 16px;
+}
+.home_adress{
+  display: none;
+}

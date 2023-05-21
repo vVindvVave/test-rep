@@ -1,0 +1,114 @@
+@use 'sass:math';
+
+._mobile{
+  @include min768{
+    display: none!important;
+  }
+}
+._mobile-tablet{
+  @include min1024{
+    display: none!important;
+  }
+}
+._tablet{
+  @include max768{
+    display: none!important;
+  }
+  @include min1024{
+    display: none!important;
+  }
+}
+._tablet-desktop{
+  @include max768{
+    display: none!important;
+  }
+}
+._desktop{
+  @include max1024{
+    display: none!important;
+  }
+}
+
+.d-none{
+  display: none!important;
+}
+
+// COLOR
+
+// BACKGROUND-COLOR
+
+// FONT-SIZE
+
+// TEXT-TRANSFORM
+.tt-u{
+  text-transform: uppercase;
+}
+
+// FONT-WEIGHT
+.fw-normal{
+  font-weight: normal;
+}
+.fw-bold{
+  font-weight: bold;
+}
+
+// FONT-STYLE
+.fs-normal{
+  font-style: normal;
+}
+
+// POSITION
+.p-r{
+  position: relative;
+}
+
+// TEXT_ALIGN
+.ta-c{
+  text-align: center;
+}
+.ta-r{
+  text-align: right;
+}
+
+// OVERFLOW
+.o-h{
+  overflow: hidden;
+}
+
+// WIDTH
+.w-100{
+  width: 100%;
+}
+
+@each $attr in height, margin-top, margin-bottom, margin-right, margin-left, padding-top, padding-bottom {
+  $int: 0;
+  $attrClass: $attr;
+  @if ($attr == 'height') {
+    $attrClass: 'h';
+  } @else if ($attr == 'margin-top'){
+    $attrClass: 'mt';
+  } @else if ($attr == 'margin-bottom'){
+    $attrClass: 'mb';
+  } @else if ($attr == 'margin-right'){
+    $attrClass: 'mr';
+  } @else if ($attr == 'margin-left'){
+    $attrClass: 'ml';
+  } @else if ($attr == 'padding-top'){
+    $attrClass: 'pt';
+  } @else if ($attr == 'padding-bottom'){
+    $attrClass: 'pb';
+  }
+  @for $i from 0 through 20 {
+    $x: calc($i / 2 * 1rem);
+    @if $i % 2 == 0 {
+      $int: math.div($i, 2);
+      .#{$attrClass}-#{$int}{
+        #{$attr}: $x!important;
+      }
+    } @else {
+      .#{$attrClass}-#{$int}_5{
+        #{$attr}: $x!important;
+      }
+    }
+  }
+}

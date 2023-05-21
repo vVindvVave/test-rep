@@ -1,0 +1,124 @@
+.accordion-list{
+  display: flex;
+  flex-direction: column;
+  background-color: #F8F6F4;
+  padding: 40px 0 24px 0;
+
+  .category{
+    margin-bottom: 48px;
+    &:last-of-type{
+      margin-bottom: 0;
+    }
+    .title{
+      padding: 0 24px;
+      font-size: 14px;
+      line-height: 24px;
+      color: #606060;
+      font-weight: 400;
+      text-transform: uppercase;
+    }
+    .accordion{
+      &:last-of-type{
+        .accordion__head{
+          border-bottom: none;
+        }
+      }
+    }
+  }
+
+}
+
+.accordion{
+
+  .js--accordion-trigger{
+    cursor: pointer;
+  }
+
+  &__head{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 24px;
+    border-bottom: 1px solid #ECE7E2;
+    cursor: pointer;
+
+    @include hover{
+      background-color: #ECE7E2;
+    }
+
+    &__content{
+      font-size: 16px;
+      line-height: 21px;
+      color:#8D3332;
+      font-weight: 400;
+      max-width: 264px;
+
+      @include min1024{
+        font-size: 20px;
+        line-height: 28px;
+        font-weight: 300;
+        max-width: unset;
+      }
+    }
+  }
+  &._active &__head{
+    border-bottom: none;
+  }
+
+  &__body{
+    overflow: hidden;
+    height: 0;
+
+
+    &__content{
+      background-color: #FFFFFF;
+      padding: 32px 24px 40px;
+      border-right: 2px solid #F8F6F4;
+      border-left: 2px solid #F8F6F4;
+    }
+  }
+  &._pricelist._active &__body{
+    height: auto;
+  }
+
+  &__trigger{
+    display: block;
+    flex-shrink: 0;
+    position: relative;
+    transition: $transition;
+    width: 7px;
+    height: 7px;
+    border-bottom: 1px solid #8D3332;
+    border-right: 1px solid #8D3332;
+    transform: rotateZ(45deg);
+    @include hover{
+      border-color: #000000;
+    }
+    @include min1024{
+      width: 10px;
+      height: 10px;
+    }
+    &:before,
+    &:after{
+      content: '';
+      display: block;
+      height: 1px;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      background-color: #000000;
+    }
+    &:after{
+      transform: rotate(90deg);
+      transition: $transition;
+    }
+  }
+  &._active &__trigger{
+    border-color: #8D3332;
+    transform: rotateZ(225deg);
+
+    &:after{
+      opacity: 0;
+    }
+  }
+}
