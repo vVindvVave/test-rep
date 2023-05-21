@@ -10,6 +10,9 @@
 	<title>Песочница</title>
 </head>
 <body>
+
+<!-- 123456 -->
+
 <div class="page <?= $GLOBALS['page'] ?? '_index' ?>">
 <?php
 if ( current_user_can( 'manage_options' ) ) {
