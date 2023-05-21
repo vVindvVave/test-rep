@@ -12,6 +12,7 @@
 <body>
 
 <!-- 1234567 -->
+<!-- test -->
 
 <div class="page <?= $GLOBALS['page'] ?? '_index' ?>">
 <?php
